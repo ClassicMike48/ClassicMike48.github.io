@@ -1,0 +1,83 @@
+a:link{
+  text-shadow: rgb(0, 0, 0) 0px 0px;
+  text-decoration: none;
+  font-size: 16px;
+}
+a:hover{
+  text-decoration: none;
+  font-size: 17px;
+  font-family: fantasy;
+}
+.Home{
+  background-color: rgb(245, 240, 171);
+  margin: 50px;
+}
+.Carn{
+  background-color: rgb(170, 89, 89);
+}
+.Herb{
+  background-color: rgb(69, 166, 69);
+}
+.current1{
+  color: brown;
+}
+.current2{
+  color: rgba(240, 236, 170, 0.818);
+}
+.current3{
+  color: maroon
+}
+h1{
+  border: 3px solid rgb(94, 95, 97);
+  border-radius: 10px;
+  background-color: rgba(137, 138, 140, 0.207);
+  text-align: center;
+  font-style: italic;
+  font-variant: small-caps;
+}
+h2{
+  border-bottom: 4px double rgb(94, 95, 97);
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-variant: small-caps;
+}
+h3{
+  border-bottom: 5px double rgb(94, 95, 97);
+  border-top: 5px double rgb(94, 95, 97);
+  border-radius: 10px;
+  text-align: center;
+}
+h6{
+  margin-top: 0%;
+  margin-bottom: 0%;
+}
+nav li{
+  list-style-type: none;
+  float: left;
+  margin: 5px;
+  border: 5px double black;
+  padding-left: 15px;
+  padding-right: 15px;
+  background-color:rgba(137, 138, 140, 0.207);
+}
+div{
+  margin-bottom: 70px;
+}
+.present img{
+  display: block;
+  margin-left:auto;
+  margin-right:auto;
+}
+.present h6{
+  text-align: center;
+  margin-bottom: 0px;
+  font-size: xx-small;
+}
+p{
+  background-color:rgba(137, 138, 140, 0.207);
+  border-radius: 15px;
+}
+ul{
+  background-color:rgba(137, 138, 140, 0.207);
+  border-radius: 15px;
+  list-style:circle
+}
