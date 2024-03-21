@@ -1,83 +1,181 @@
-a:link{
-  text-shadow: rgb(0, 0, 0) 0px 0px;
-  text-decoration: none;
-  font-size: 16px;
+/* This allows for more intuitive sizing of CSS Boxes - Source: joshwcomeau */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
-a:hover{
-  text-decoration: none;
-  font-size: 17px;
-  font-family: fantasy;
+
+:root {
+  /* Color Palette */
+  --lightgray: hsl(0, 0%, 81%);
+  --darkgray: hsl(0, 0%, 69%);
+  --palered: hsla(0, 80%, 72%, 0.274);
+  --darkblue: hsl(240, 10%, 25%);
+  
+
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
-.Home{
-  background-color: rgb(245, 240, 171);
-  margin: 50px;
+
+
+/* Header */
+header {
+  --header-padding-left: 10px; 
+  margin: -8px -8px 8px -8px;
+  padding: 4px;
+  position: sticky;
+  top: 0px;
+  box-shadow: 0px 4px 10px 5px rgba(0, 0, 0, 0.219);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background-color: rgb(240, 105, 105);
 }
-.Carn{
-  background-color: rgb(170, 89, 89);
+
+header h1 {
+  margin-left: var(--header-padding-left);
 }
-.Herb{
-  background-color: rgb(69, 166, 69);
+
+/* Navbar */
+nav {
+  margin-left: var(--header-padding-left);
+  background-color: var(--darkblue);
+  border-radius: 0 1.25rem 1.25rem 0;
+  box-shadow: 0px 4px;
 }
-.current1{
-  color: brown;
+nav ul {
+  display: flex;
+  justify-content: start;
+  list-style: none;
+  font-size: 1.125rem;
+  padding: 0px;
+  overflow: auto;
 }
-.current2{
-  color: rgba(240, 236, 170, 0.818);
+@media (max-width: 400px) {
+  nav {
+    border-radius: 1.25rem;
+  }
+  nav ul {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }
-.current3{
-  color: maroon
+nav ul li {
+  background-color: var(--darkblue);
 }
-h1{
-  border: 3px solid rgb(94, 95, 97);
-  border-radius: 10px;
-  background-color: rgba(137, 138, 140, 0.207);
+
+.navlink {
+  
+  display: block; /* This line enables changing the size of the links */
+  padding: 8px 12px;
+  font-weight:bold;
+  text-decoration-thickness: 2px; /* This reduces the boldness of the underline. Don't remove underline for links for accessibility*/
+  color: white;
+  --shadowsize: max(4px, 0.125rem);
+  box-shadow: var(--shadowsize) var(--shadowsize) 1px hsl(240, 10%, 45%) inset,
+    calc(var(--shadowsize) * -1) calc(var(--shadowsize) * -1) 1px
+      hsl(240, 10%, 45%) inset;
+  border: 1px black solid;
+}
+
+.navlink:hover {
+  background-color: hsl(240, 10%, 45%);
+  box-shadow: var(--shadowsize) var(--shadowsize) 1px var(--darkblue) inset,
+    calc(var(--shadowsize) * -1) calc(var(--shadowsize) * -1) 1px
+      var(--darkblue) inset;
+}
+
+/* Main */
+body {
+  background-color: var(--palered);
+}
+
+.figure-wrapper {
+  width: fit-content;
+  margin: 0 auto;  
+  border-radius: 20px;
+  background-color: white;
+  box-shadow: 0px 4px 15px 1px rgba(0, 0, 0, 0.274);
+}
+
+figure {
+  max-width: 800px; /* Keeps figure and figcaption width constrained to the same size while also preventing the image from getting too big */
+  margin: 0 auto;
+  padding: 20px;
   text-align: center;
-  font-style: italic;
-  font-variant: small-caps;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
 }
-h2{
-  border-bottom: 4px double rgb(94, 95, 97);
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  font-variant: small-caps;
+
+figcaption {
+  border: 0.5px solid black;
+  border-radius: 5px;
+  overflow-wrap: break-word;
+  font-size: 0.75rem;
+  padding: 10px;
+  background-color: var(--lightgray);
 }
-h3{
-  border-bottom: 5px double rgb(94, 95, 97);
-  border-top: 5px double rgb(94, 95, 97);
-  border-radius: 10px;
-  text-align: center;
+figure img {
+  width: 100%;
 }
-h6{
-  margin-top: 0%;
-  margin-bottom: 0%;
+
+.card {
+  --card-spacing: 15px;
+  border-radius: 20px;
+  margin: 10px auto;
+  padding: 10px 20px;
+  max-width: 85%;
+  background-color: white;
+  box-shadow: 0px 4px 15px 1px rgba(0, 0, 0, 0.274);
 }
-nav li{
-  list-style-type: none;
-  float: left;
-  margin: 5px;
-  border: 5px double black;
-  padding-left: 15px;
-  padding-right: 15px;
-  background-color:rgba(137, 138, 140, 0.207);
+
+.card h2 {
+  font-size: 1.5rem;
 }
-div{
-  margin-bottom: 70px;
+
+.card p {
+  padding-left: 1rem;
+  font-size: 1.25rem;
+  text-align: justify;
 }
-.present img{
-  display: block;
-  margin-left:auto;
-  margin-right:auto;
+
+.card li {
+  font-size: 1.25rem;
+  text-align: justify;
 }
-.present h6{
-  text-align: center;
-  margin-bottom: 0px;
-  font-size: xx-small;
+
+/* Footer */
+footer {
+  margin: 0 -8px;
+  position: relative;
+  bottom: -8px;
+  padding: 15px 30px;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  background-color: var(--darkblue);
+  box-shadow: 0px 4px 15px 1px rgba(0, 0, 0, 0.274);
 }
-p{
-  background-color:rgba(137, 138, 140, 0.207);
-  border-radius: 15px;
+
+footer h3 {
+  color: white;
+  font-size: 1.25rem;
 }
-ul{
-  background-color:rgba(137, 138, 140, 0.207);
-  border-radius: 15px;
-  list-style:circle
+footer li {
+  margin: 10px;
+  color: white;
+  font-size: 1rem;
 }
+
+footer a{
+  color: hsl(210, 92.7%, 83.3%);
+  font-weight: bold;
+}
+
+footer a:visited{
+  color: hsl(210, 100.0%, 68.7%);
+}
+
+/* TODO - Add media query for light / dark mode users. Default should be light */
