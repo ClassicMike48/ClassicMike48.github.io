@@ -8,16 +8,32 @@
 :root {
   /* Color Palette */
   --lightgray: hsl(0, 0%, 81%);
-  --darkgray: hsl(0, 0%, 69%);
-  --palered: hsla(0, 80%, 72%, 0.274);
-  --darkblue: hsl(240, 10%, 25%);
+  --carn-header-color: hsl(0, 82%, 68%);
+  --carn-body-color: hsla(0, 80%, 72%, 0.274);
+  --herb-header-color:hsl(98, 80%, 72%);
+  --herb-body-color: hsla(98, 80%, 72%, 0.274);
+  --home-header-color: hsl(56, 80%, 72%);
+  --home-body-color: hsla(56, 80%, 72%, 0.274);
+  --darkblue: hsl(240, 10%, 25%); /* Used in nav and footer */
   
-
+  /* Font Styles */
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 
+/* Body */
+.Carnivores{
+  background-color: var(--carn-body-color);
+}
+
+.Herbivores{
+  background-color: var(--herb-body-color);
+}
+
+.Home{
+  background-color: var(--home-body-color);
+}
 /* Header */
 header {
   --header-padding-left: 10px; 
@@ -28,9 +44,19 @@ header {
   box-shadow: 0px 4px 10px 5px rgba(0, 0, 0, 0.219);
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
-  background-color: rgb(240, 105, 105);
 }
 
+.Carn-Header{
+  background-color: var(--carn-header-color);
+}
+
+.Herb-Header{
+  background-color: var(--herb-header-color);
+}
+
+.Home-Header{
+  background-color: var(--home-header-color);
+}
 header h1 {
   margin-left: var(--header-padding-left);
 }
@@ -86,9 +112,6 @@ nav ul li {
 }
 
 /* Main */
-body {
-  background-color: var(--palered);
-}
 
 .figure-wrapper {
   width: fit-content;
@@ -120,6 +143,7 @@ figcaption {
 }
 figure img {
   width: 100%;
+  max-height: 700px;
 }
 
 .card {
